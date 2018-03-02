@@ -24,5 +24,13 @@ $trajets = array();
 	trajetsToString($trajets);
 
 	// La suite de l'algorithme ici, à vous de jouer :) 
-
+	
+	// exemple d'utilisation de de la fonction 'getDistance' : 
+		// echo getDistance(1,1,2,3);
+	// exemple de récupération du nombre de véhicules totaux
+		// echo $grille['nombre_vehicules']
+	// exemple de récupération du nombre de trajets totaux 
+		// echo $grille['nombre_trajets']
+	// exemple de récupération des coordonnées x;y du départ du trajet 1 
+		// echo $trajets[1]['etape_depart_ligne'].";".$trajets[1]['etape_depart_colonne']
 ?> 

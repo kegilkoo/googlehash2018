@@ -5,6 +5,7 @@
  * *******************************/
 
 // fonction check_parameter : Check si un paramètre d'entrée est bien saisie et si il s'agit bien d'un fichier qui existe. 
+	// prend en paramètre argc et argv qui sont des variables automatiquement créés par PHP qui contiennent : $argc le nombre de paramètre en entrée (ça comprend également automatiquement le nom du script lui même) et le tableau $argv qui contient tous les paramètres d'entrées
 	// retourne le nom du fichier si tout est OK 
 	// retourne false si il y a un problème
 function check_parameter($argc, $argv){
@@ -36,6 +37,7 @@ function check_parameter($argc, $argv){
 }
 
 // fonction dataFile_to_arrays : rentre les données du fichier data $file_name dans les tableaux $grille et $trajets
+// 	prend en entrée $file_name, le nom du fichier à traiter
 function dataFile_to_arrays($file_name){
 
 	global $grille;
@@ -82,7 +84,14 @@ function dataFile_to_arrays($file_name){
 	fclose($file);
 }
 
+// function getDistance : renvoie la distance entre deux points
+//	prend en entrée les coorodonnées du point de départ x1 et y1 , et  les coodoronnées du point d'arrivée x2 et y2
+function getDistance($x1, $y1, $x2, $y2){
+	return abs($x1 - $x2) + abs($y1 - $y2);
+}
+
 // fonction trajetsToString : affiche simplement de manière verbeuse les données contenues dans le tableau $trajets
+//	prend en entrée le tableau $trajets
 function trajetsToString($trajets){
 	echo "Les données des trajets sont les suivantes : \n";
 	foreach($trajets as $i => $trajet){
@@ -95,6 +104,7 @@ function trajetsToString($trajets){
 }
 
 // fonction grilleToString : affiche simplement de manière verbeuse les données contenues dans le tableau $trajets
+// 	prend en entrée le tableau grille
 function grilleToString($grille){
 	echo "les données globale sont : \n";
 	echo "\tLa grille est de taille : ${grille['nombre_ligne']} x ${grille['nombre_colonne']} \n";
